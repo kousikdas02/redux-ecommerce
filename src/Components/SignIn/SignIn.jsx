@@ -6,43 +6,43 @@ import { Box, Button, Container, Grid, TextField, Typography } from '@mui/materi
 import './SignIn.scss';
 
 export default function SignIn() {
-  return (
-    <>
-        <Header />
-        <Box className="sign-in-wrapper">
-            <Container fixed>
-                <Box className="sign-in-inner">
-                    <Typography variant='h2'>Sign In</Typography>
-                    <form>
-                        <Grid container columnSpacing={2} rowSpacing={2} sx={{marginBottom: '15px'}}>
-                            <Grid item md={12}>
-                                <Box className="form-group">
-                                    <TextField  variant="outlined" placeholder='Email' type='email' />
-                                </Box>
+    return (
+        <>
+            <Header />
+            <Box className="sign-in-wrapper">
+                <Container fixed>
+                    <Box className="sign-in-inner">
+                        <Typography variant='h2'>Sign In</Typography>
+                        <form>
+                            <Grid container columnSpacing={2} rowSpacing={2} sx={{ marginBottom: '15px' }}>
+                                <Grid item md={12}>
+                                    <Box className="form-group">
+                                        <TextField variant="outlined" placeholder='Email' type='email' />
+                                    </Box>
+                                </Grid>
+
                             </Grid>
-                            
-                        </Grid>
-                        <Grid container columnSpacing={2} rowSpacing={2} sx={{marginBottom: '15px'}} >
-                            <Grid item md={12}>
-                                <Box className="form-group">
-                                    <TextField  variant="outlined" placeholder='Password' type='password' />
-                                </Box>
+                            <Grid container columnSpacing={2} rowSpacing={2} sx={{ marginBottom: '15px' }} >
+                                <Grid item md={12}>
+                                    <Box className="form-group">
+                                        <TextField variant="outlined" placeholder='Password' type='password' />
+                                    </Box>
+                                </Grid>
+
                             </Grid>
-                            
-                        </Grid>
-                        
-                        <Grid container columnSpacing={2} rowSpacing={2} sx={{marginBottom: '15px'}} >
-                            <Grid item md={12}>
-                                <Box className="form-group">
-                                    <Button className='cmn-btn' type='button' variant="contained">Submit</Button>
-                                </Box>
+
+                            <Grid container columnSpacing={2} rowSpacing={2} sx={{ marginBottom: '15px' }} >
+                                <Grid item md={12}>
+                                    <Box className="form-group text-center">
+                                        <Button className='cmn-btn' type='button' variant="contained">Submit</Button>
+                                    </Box>
+                                </Grid>
+
                             </Grid>
-                           
-                        </Grid>
-                    </form>
-                </Box>
-            </Container>
-        </Box>
-    </>
-  )
+                        </form>
+                    </Box>
+                </Container>
+            </Box>
+        </>
+    )
 }

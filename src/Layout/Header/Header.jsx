@@ -16,7 +16,7 @@ import { Link, List, ListItem } from '@mui/material';
 
 import './Header.scss';
 
-const pages = [ 'Add Product'];
+const pages = ['Add Product'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
@@ -129,16 +129,16 @@ function ResponsiveAppBar() {
           </Box>
 
           <List className='header-right'>
-              <ListItem>
-                <Link href="">
-                    Sign In
-                </Link>
-              </ListItem>
-              <ListItem>
-                <Link href="">
-                    Sign Up
-                </Link>
-              </ListItem>
+            <ListItem>
+              <Link href="/signin">
+                Sign In
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Link href="/signup">
+                Sign Up
+              </Link>
+            </ListItem>
           </List>
 
           <Box sx={{ flexGrow: 0 }}>

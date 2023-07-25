@@ -86,7 +86,7 @@ export default function SignIn() {
                             </Grid>
                             <Grid container columnSpacing={2} rowSpacing={2} sx={{ marginBottom: '15px' }} >
                                 <Grid item md={12}>
-                                    <Box className="form-group" sx={{ textAlign: 'center' }}>
+                                    <Box className="form-group text-center">
                                         <Button className='cmn-btn' type='button' variant="contained">Submit</Button>
                                     </Box>
                                 </Grid>
