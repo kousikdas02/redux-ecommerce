@@ -1,0 +1,16 @@
+.header-right{
+    margin-right: 30px !important;
+    display: flex;
+    column-gap: 15px;
+    
+    li{
+        padding: 0 5px;
+        width: initial;
+        a{
+            color: #fff;
+            display: inline-block;
+            text-decoration: none;
+        }
+    }
+}
+
