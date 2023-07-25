@@ -15,9 +15,18 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { Link, List, ListItem } from '@mui/material';
 
 import './Header.scss';
+import { useNavigate } from 'react-router-dom';
 
 const pages = ['Add Product'];
+const pages2 = [
+  {
+    title: 'Add Product',
+    path: '/add-product',
+  },
+
+]
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -37,6 +46,7 @@ function ResponsiveAppBar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+  const navigate = useNavigate();
 
   return (
     <AppBar position="static">
@@ -92,7 +102,7 @@ function ResponsiveAppBar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography variant='caption'>{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -117,14 +127,14 @@ function ResponsiveAppBar() {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
+            {pages2.map((page) => (
+              <Link href={page.path}
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-                {page}
-              </Button>
+                {page.title}
+              </Link>
             ))}
           </Box>
 

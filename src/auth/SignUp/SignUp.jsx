@@ -15,7 +15,7 @@ export default function SignIn() {
             setFileImg(URL.createObjectURL(e.target.files[0]))
         }
     }
-    console.log(fileName)
+
     return (
         <>
             <Header />

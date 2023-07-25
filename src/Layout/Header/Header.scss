@@ -1,16 +1,19 @@
-.header-right{
+.header-right {
     margin-right: 30px !important;
     display: flex;
     column-gap: 15px;
-    
-    li{
+
+    li {
         padding: 0 5px;
         width: initial;
-        a{
+        a {
             color: #fff;
             display: inline-block;
             text-decoration: none;
+            &:hover {
+                // opacity: 0.7;
+                color: #a1d0ff;
+            }
         }
     }
 }
-
