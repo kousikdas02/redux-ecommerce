@@ -60,7 +60,20 @@ export default function SignIn() {
                                             {
                                                 fileImg ? '' : <Typography variant='body1'>Upload Image</Typography>
                                             }
-                                            <TextField className='upload_input' variant="outlined" type='file' onChange={handleChange} />
+                                            <Button
+                                                component="label"
+                                                onChange={handleChange}
+                                                className='fileName'
+                                            >
+
+                                                <input
+                                                    type="file"
+                                                    hidden
+                                                    accept="image/jpeg, image/png"
+
+                                                />
+                                            </Button>
+                                            {/* <TextField className='upload_input' variant="outlined" type='file'   /> */}
                                             {
                                                 fileName &&
                                                 <Typography variant='caption' className='fileName'>Uploaded File: {fileName}</Typography>
@@ -73,7 +86,7 @@ export default function SignIn() {
                             </Grid>
                             <Grid container columnSpacing={2} rowSpacing={2} sx={{ marginBottom: '15px' }} >
                                 <Grid item md={12}>
-                                    <Box className="form-group">
+                                    <Box className="form-group" sx={{ textAlign: 'center' }}>
                                         <Button className='cmn-btn' type='button' variant="contained">Submit</Button>
                                     </Box>
                                 </Grid>

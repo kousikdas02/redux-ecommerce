@@ -15,6 +15,7 @@
         padding: 20px;
         position: relative;
         border-radius: 10px;
+        text-align: center;
         .uploadImg {
             width: 100px;
             height: 100px;
@@ -28,7 +29,7 @@
                 object-fit: cover;
             }
         }
-        .upload_input {
+        label {
             position: absolute;
             left: 0;
             top: 0;
