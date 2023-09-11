@@ -12,7 +12,8 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import { Link, List, ListItem } from '@mui/material';
+import { Divider, Link, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 import './Header.scss';
 import { useNavigate } from 'react-router-dom';
@@ -25,10 +26,10 @@ const pages2 = [
   },
 
 ]
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = ['Dashboard', 'Logout'];
 
 
-function ResponsiveAppBar() {
+function ResponsiveAppBar(props) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -48,11 +49,37 @@ function ResponsiveAppBar() {
   };
   const navigate = useNavigate();
 
+  const drawerWidth = 240;
+  const navItems = ['Home', 'About', 'Contact'];
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const handleDrawerToggle = () => {
+    setMobileOpen((prevState) => !prevState);
+  };
+  const container = window !== undefined ? () => window().document.body : undefined;
+  const drawer = (
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+      <Typography variant="h6" sx={{ my: 2 }}>
+        MUI
+      </Typography>
+      <Divider />
+      <List>
+        {navItems.map((item) => (
+          <ListItem key={item} disablePadding>
+            <ListItemButton sx={{ textAlign: 'center' }}>
+              <ListItemText primary={item} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
+
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} onClick={handleDrawerToggle} />
           <Typography
             variant="h6"
             noWrap
@@ -148,6 +175,18 @@ function ResponsiveAppBar() {
               <Link href="/signup">
                 Sign Up
               </Link>
+            </ListItem>
+          </List>
+
+          <List className='header-right'>
+            <ListItem>
+              <Link href='/home'>Home</Link>
+            </ListItem>
+            <ListItem>
+              <Link href='/profile'>Profile</Link>
+            </ListItem>
+            <ListItem>
+              <Link href='/cart'><ShoppingCartIcon /> <Typography variant='caption' className='cartNumber'>0</Typography></Link>
             </ListItem>
           </List>
 
